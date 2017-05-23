@@ -4,7 +4,7 @@
 		module="learnscala$sources_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170522180146"
+		publication="20170522220657"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
