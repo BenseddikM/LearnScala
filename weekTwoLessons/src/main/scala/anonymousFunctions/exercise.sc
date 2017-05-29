@@ -1,4 +1,4 @@
-object exercise2 {
+object exercise {
 
   def sum(f: Int => Int, a: Int, b: Int): Int = {
     def loop(a: Int, acc: Int): Int = {
