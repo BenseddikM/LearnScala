@@ -8,14 +8,13 @@ object lecture2_5{
     def numer = x
     def denom = y
 
-    def add(that: Rational) =
+    def + (that: Rational) =
       new Rational(numer * that.denom + that.numer * denom, denom * that.denom)
-    def neg() =
+    def unary_- : Rational =
       new Rational(- numer, denom)
-    def sub(that:Rational) =
-      new Rational(numer * that.denom - that.numer * denom, denom * that.denom)
-    def less(that: Rational) = numer * that.denom < that.numer * denom
-    def max(that: Rational) = if (this.less(that)) that else this
+    def - (that:Rational) = this + -that
+    def < (that: Rational) = numer * that.denom < that.numer * denom
+    def max(that: Rational) = if (this < that) that else this
 
     override def toString: String = {
       val g = gcd(x,y)
@@ -36,17 +35,17 @@ object lecture2_5{
   def makeString(r: Rational)=
     r.numer + "/" + r.denom
 
-  x.neg()
-  x.add(y)
-  x.sub(y)
-  x.sub(y).sub(z)
-  x.less(y)
-  x.max(y)
+  -x
+  x + y
+  x - y
+  x - y - z
+  x < y
+  x max y
 
   val r = 1
-  assert(r <= 0)
+  // assert(r <= 0)
 
 
-  val bigRational = new Rational(1221212,323233)
-  bigRational.numer
+  new Rational(1,2) < new Rational(2,3)
+
 }
