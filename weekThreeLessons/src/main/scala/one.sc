@@ -52,6 +52,14 @@ class Sub extends Base {
   def bar = 3
 }
 
+// Exceptions :
+object scratch {
+  val a = 1
+  def error(msg: String) = throw new Error(msg)
+}
+
+if (true) 1 else false // anyval
+
 object Empty extends IntSet {
   def contains(x: Int): Boolean = false
 
